@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>🌎 Pixel Planet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-gradient"></div>
+
+  <header class="site-header">
+    <div class="title">🌎 Pixel Planet</div>
+    <div class="header-controls">
+      <div class="stat">Pixels: <span id="pixel-count">0</span></div>
+      <button id="timelapse-btn" class="btn">Time-lapse</button>
+      <input id="nick" class="nick-input" placeholder="Nickname (optional)" maxlength="20">
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="canvas-wrap">
+      <canvas id="scene"></canvas>
+      <div id="hud" class="hud">
+        <div class="cooldown">
+          <button id="color-toggle" class="btn small">Palette</button>
+          <div id="cooldown-timer" class="cooldown-timer">Ready</div>
+        </div>
+        <div class="controls">
+          <div class="zoom-info">Zoom: <span id="zoom-level">100%</span></div>
+        </div>
+      </div>
+
+      <div id="palette" class="palette">
+        <!-- colors injected by script -->
+      </div>
+
+      <div id="tooltip" class="tooltip" hidden></div>
+    </div>
+
+    <aside class="side">
+      <div class="panel">
+        <h3>How to play</h3>
+        <ol>
+          <li>Pick a color from the palette below (or press P).</li>
+          <li>Click on the planet to place a pixel (1 pixel per 10s).</li>
+          <li>Use mouse/touch drag to pan, scroll to zoom.</li>
+        </ol>
+        <div class="small">Tip: open another tab to see realtime sync.</div>
+      </div>
+
+      <div class="panel">
+        <h3>Actions</h3>
+        <button id="clear-btn" class="btn danger">Clear Planet</button>
+        <button id="center-btn" class="btn">Center View</button>
+      </div>
+
+      <div class="panel">
+        <h3>Recent</h3>
+        <div id="recent-list" class="recent-list"></div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    Made with ✨ — collaborative one-pixel-at-a-time.
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
